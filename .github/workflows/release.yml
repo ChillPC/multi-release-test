@@ -29,7 +29,7 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v2
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
@@ -47,7 +47,7 @@ jobs:
       - name: Release
         uses: softprops/action-gh-release@v1
         with:
-          files: "*.tar.gz"
+          files: "1.tar.gz"
           # body_path: ${{ github.workspace }}-CHANGELOG.txt
           # note you'll typically need to create a personal access token
           # with permissions to create releases in the other repo
