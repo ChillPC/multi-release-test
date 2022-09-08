@@ -47,7 +47,8 @@ jobs:
       - name: Release
         uses: softprops/action-gh-release@v1
         with:
-          files: "1.tar.gz"
+          # files: "1.tar.gz"
+          files: "*.tar.gz"
           # body_path: ${{ github.workspace }}-CHANGELOG.txt
           # note you'll typically need to create a personal access token
           # with permissions to create releases in the other repo
