@@ -1,26 +1,16 @@
+name: Release scaffolds
 
-# This is a basic workflow to help you get started with Actions
-
-name: Release
-
-# Controls when the workflow will run
-# on:
-#   # Triggers the workflow on push or pull request events but only for the "master" branch
-#   push:
-#     branches: [ "master" ]
-#   pull_request:
-#     branches: [ "master" ]
 on:
   push:
-    # branches: [ "master" ]
     tags:
       - '*'
-
 jobs:
   release:
     runs-on: ubuntu-latest
 
     steps:
+      - uses: actions/checkout@v2
+
       - name: Create the release files
         run: find * -maxdepth 0 -type d -exec tar -czf "{}".tar.gz "{}" \;
 
